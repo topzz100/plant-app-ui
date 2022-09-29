@@ -3,10 +3,10 @@ import { FlatList, SafeAreaView, StyleSheet, Text, TextInput, View } from 'react
 import COLORS from '../../consts/colors'
 import plants from '../../consts/plants'
 import {MaterialIcons} from '@expo/vector-icons'
-import CategoryList from '../components/categoryList';
+import CategoryList from '../components/CategoryList';
 import Card from '../components/Card';
 
-export default function App() {
+export default function Homescreen({navigation}) {
   return (
     <SafeAreaView style={{
       flex: 1,
@@ -43,7 +43,7 @@ export default function App() {
         numColumns={2}
         data={plants}
         renderItem={({item}) => (
-          <Card plant={item} />
+          <Card plant={item} navigation={navigation}/>
         )}
       />
     </SafeAreaView>

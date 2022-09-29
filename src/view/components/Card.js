@@ -4,10 +4,11 @@ import COLORS from '../../consts/colors'
 import plants from '../../consts/plants'
 import {MaterialIcons} from '@expo/vector-icons'
 
-const Card = ({plant}) => {
+const Card = ({plant, navigation}) => {
   return (
     <TouchableOpacity 
       activeOpacity={0.8}
+      onPress={() => navigation.navigate('Details', plant)}
     >
       <View style={styles.card}>
         <View style={{alignItems: 'flex-end'}}>
@@ -38,10 +39,12 @@ const Card = ({plant}) => {
           }}
         >
           <Image
-            source={'../../assets/plant1.png'}
+            source={plant.img}
             style={{
               flex: 1,
-              resizeMode: 'contain'
+              resizeMode: 'contain',
+              width: '100%',
+              height: '100%'
             }}
           />
         </View>
